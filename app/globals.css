@@ -1,26 +1,109 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-glass: var(--glass);
+  --color-glass-border: var(--glass-border);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --primary: #8b5cf6; /* purple-500 */
+  --primary-foreground: #ffffff;
+  --accent: #3b82f6; /* blue-500 */
+  --accent-foreground: #ffffff;
+  --glass: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+.light {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --primary: #7c3aed; /* purple-600 */
+  --primary-foreground: #ffffff;
+  --accent: #2563eb; /* blue-600 */
+  --accent-foreground: #ffffff;
+  --glass: rgba(0, 0, 0, 0.05);
+  --glass-border: rgba(0, 0, 0, 0.1);
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  
+  /* Vibrant background meshes for glassmorphism to pop */
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(139, 92, 246, 0.15), transparent 35%),
+    radial-gradient(circle at 85% 30%, rgba(59, 130, 246, 0.15), transparent 35%),
+    radial-gradient(circle at 50% 80%, rgba(139, 92, 246, 0.1), transparent 45%);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.light body {
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(124, 58, 237, 0.1), transparent 35%),
+    radial-gradient(circle at 85% 30%, rgba(37, 99, 235, 0.1), transparent 35%),
+    radial-gradient(circle at 50% 80%, rgba(124, 58, 237, 0.05), transparent 45%);
+}
+
+/* Global noise overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+@utility glass {
+  background-color: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+@utility glass-card {
+  background: linear-gradient(145deg, var(--glass) 0%, transparent 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+@utility text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, var(--primary), var(--accent));
+}
+
+/* Background blob animations */
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@utility animate-blob {
+  animation: blob 7s infinite;
+}
+
+@utility animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+@utility animation-delay-4000 {
+  animation-delay: 4s;
 }
