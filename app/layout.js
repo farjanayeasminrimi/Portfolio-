@@ -1,10 +1,15 @@
 import "./globals.css";
 import { ThemeProvider } from "./components/ThemeProvider";
 import { SmoothScroll } from "./components/SmoothScroll";
+import { Loader } from "./components/Loader";
+import { BackgroundAnimation } from "./components/BackgroundAnimation";
 
 export const metadata = {
   title: "Farjana Yeasmin Rimi | Portfolio",
   description: "Personal portfolio of Farjana Yeasmin Rimi, a Full Stack Developer.",
+  icons: {
+    icon: "/hero.png",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -18,6 +23,8 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange
         >
           <SmoothScroll>
+            <Loader />
+            <BackgroundAnimation />
             {children}
           </SmoothScroll>
         </ThemeProvider>

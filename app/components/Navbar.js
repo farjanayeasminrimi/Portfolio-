@@ -87,7 +87,9 @@ export function Navbar() {
                 onClick={(e) => handleScroll(e, link.href)}
                 className="flex items-center gap-2 px-4 py-2 rounded-full glass hover:bg-primary/20 transition-all text-sm font-medium hover:-translate-y-0.5"
               >
-                <Icon className="w-4 h-4" />
+                <span className="glass p-1.5 rounded-full border border-white/10 dark:border-white/5">
+                  <Icon className="w-4 h-4" />
+                </span>
                 {link.name}
               </Link>
             );
@@ -110,7 +112,9 @@ export function Navbar() {
                       onClick={(e) => handleScroll(e, link.href)}
                       className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-primary/20 hover:text-primary transition-colors text-sm font-medium"
                     >
-                      <Icon className="w-4 h-4" />
+                      <span className="glass p-1.5 rounded-full border border-white/10 dark:border-white/5">
+                        <Icon className="w-4 h-4" />
+                      </span>
                       {link.name}
                     </Link>
                   );
@@ -145,7 +149,9 @@ export function Navbar() {
                 onClick={(e) => handleScroll(e, link.href)}
                 className="flex items-center gap-4 px-4 py-3 rounded-xl glass hover:bg-primary/20 hover:text-primary transition-all text-base font-medium"
               >
-                <Icon className="w-5 h-5" />
+                <span className="glass p-1.5 rounded-full border border-white/10 dark:border-white/5">
+                  <Icon className="w-5 h-5" />
+                </span>
                 {link.name}
               </Link>
             );

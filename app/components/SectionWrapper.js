@@ -10,7 +10,7 @@ export function SectionWrapper({ children, id, className = "" }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`min-h-screen py-24 flex items-center relative ${className}`}
+      className={`py-8 md:py-12 relative ${className}`}
     >
       <div className="max-w-6xl mx-auto px-6 w-full relative z-10">
         {children}
