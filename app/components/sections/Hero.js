@@ -113,16 +113,16 @@ export function Hero() {
             <h2 className="text-xl md:text-2xl font-medium text-gray-500 dark:text-gray-400 mb-2">
               Hello, I'm
             </h2>
-            <h1 className="text-5xl md:text-7xl font-bold mb-4 tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 tracking-tight break-words">
               Farjana Yeasmin <span className="text-gradient">Rimi</span>
             </h1>
             
             <div className="h-10 overflow-hidden flex items-center justify-center lg:justify-start text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300">
               <span className="mr-2 whitespace-nowrap">I am a</span>
-              <div className="relative flex-1 h-full w-full min-w-[250px] perspective-[1000px]">
+              <div className="relative h-full w-[200px] md:w-[280px] perspective-[1000px] flex items-center">
                 <div
                   ref={textRef}
-                  className="text-primary absolute left-0 w-full text-center lg:text-left"
+                  className="text-primary w-full text-left"
                 >
                   {ROLES[currentRole]}
                 </div>
@@ -165,7 +165,7 @@ export function Hero() {
           ref={imageRef}
           className="flex-1 flex justify-center lg:justify-end relative"
         >
-          <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-[450px] lg:h-[450px]">
+          <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[450px] lg:h-[450px]">
             {/* GSAP Floating Background Elements */}
             <div className="gsap-float absolute -top-12 -left-4 w-24 h-24 bg-primary/30 rounded-3xl blur-xl -z-10 mix-blend-screen" />
             <div className="gsap-float absolute bottom-10 -right-12 w-32 h-32 bg-accent/30 rounded-full blur-2xl -z-10 mix-blend-multiply dark:mix-blend-screen" />
@@ -199,6 +199,7 @@ export function Hero() {
                 src="/hero.png" 
                 alt="Farjana Yeasmin Rimi"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover scale-[1.8] -translate-y-12 transition-transform duration-700"
                 priority
               />

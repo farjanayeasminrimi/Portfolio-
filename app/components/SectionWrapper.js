@@ -12,7 +12,7 @@ export function SectionWrapper({ children, id, className = "" }) {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`py-8 md:py-12 relative ${className}`}
     >
-      <div className="max-w-6xl mx-auto px-6 w-full relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full relative z-10">
         {children}
       </div>
     </motion.section>

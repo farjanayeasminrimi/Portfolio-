@@ -121,7 +121,7 @@ export function Footer() {
       </div>
 
       {/* Bottom Row */}
-      <div className="max-w-6xl mx-auto px-6 mt-12 pt-8 flex flex-col items-center justify-center relative">
+      <div className="max-w-6xl mx-auto px-6 mt-12 pt-8 flex flex-col items-center justify-center relative pb-16 md:pb-0">
         <p className="text-sm text-gray-500 dark:text-gray-400 text-center w-full">
           © {currentYear} Farjana Yeasmin Rimi. All rights reserved.
         </p>

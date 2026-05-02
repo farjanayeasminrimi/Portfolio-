@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="antialiased selection:bg-primary/30">
+      <body className="antialiased selection:bg-primary/30 max-w-[100vw] overflow-x-hidden">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -25,7 +25,9 @@ export default function RootLayout({ children }) {
           <SmoothScroll>
             <Loader />
             <BackgroundAnimation />
-            {children}
+            <div className="overflow-x-hidden w-full relative">
+              {children}
+            </div>
           </SmoothScroll>
         </ThemeProvider>
       </body>
