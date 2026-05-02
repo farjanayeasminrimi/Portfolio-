@@ -122,7 +122,7 @@ export function Hero() {
               <div className="relative h-full w-[240px] sm:w-[260px] md:w-[280px] perspective-[1000px] flex items-center">
                 <div
                   ref={textRef}
-                  className="text-primary w-full text-left whitespace-nowrap"
+                  className="text-primary w-full text-center sm:text-left whitespace-nowrap"
                 >
                   {ROLES[currentRole]}
                 </div>
