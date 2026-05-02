@@ -118,11 +118,11 @@ export function Hero() {
             </h1>
             
             <div className="h-10 overflow-hidden flex items-center justify-center lg:justify-start text-lg sm:text-xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300">
-              <span className="mr-2 whitespace-nowrap">I am a</span>
-              <div className="relative h-full w-[240px] sm:w-[260px] md:w-[280px] perspective-[1000px] flex items-center">
+              <div className="mr-2 whitespace-nowrap flex items-center h-full">I am a</div>
+              <div className="relative h-full w-auto md:w-[280px] perspective-[1000px] flex items-center">
                 <div
                   ref={textRef}
-                  className="text-primary w-full text-center sm:text-left whitespace-nowrap"
+                  className="text-primary text-left whitespace-nowrap flex items-center h-full"
                 >
                   {ROLES[currentRole]}
                 </div>
