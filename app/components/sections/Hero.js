@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { SectionWrapper } from "../SectionWrapper";
 import gsap from "gsap";
+import { motion } from "framer-motion";
 
 const ROLES = [
   "Full Stack Developer",
@@ -117,17 +118,21 @@ export function Hero() {
               Farjana Yeasmin <span className="text-gradient">Rimi</span>
             </h1>
             
-            <div className="h-10 overflow-hidden flex items-center justify-center lg:justify-start text-lg sm:text-xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300">
-              <div className="mr-2 whitespace-nowrap flex items-center h-full">I am a</div>
-              <div className="relative h-full w-auto md:w-[280px] perspective-[1000px] flex items-center">
+            <motion.div 
+              layout 
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="h-10 overflow-hidden flex items-center justify-center lg:justify-start text-lg sm:text-xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300"
+            >
+              <motion.div layout transition={{ duration: 0.5, ease: "easeInOut" }} className="mr-2 whitespace-nowrap flex items-center h-full">I am a</motion.div>
+              <motion.div layout transition={{ duration: 0.5, ease: "easeInOut" }} className="relative h-full w-auto md:w-[280px] perspective-[1000px] flex items-center">
                 <div
                   ref={textRef}
                   className="text-primary text-left whitespace-nowrap flex items-center h-full"
                 >
                   {ROLES[currentRole]}
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
 
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto lg:mx-0">
